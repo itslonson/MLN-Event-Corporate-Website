@@ -1,30 +1,30 @@
 <template>
-    <header>
+<div class="container">
+    <header class="top-header">
         <ul>
             <li><nuxt-link to="/">Главная</nuxt-link></li>
         </ul>
     </header>
+</div>
 </template>
 
 <style scoped>
-header{
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.top-header{
+  width: 100%;
 
-ul{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-li{
-    margin: 0 10px;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: transparent;
+  z-index: 999;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 </style>
+
+<script>
+export default {
+    name: "Header"
+}
+</script>
