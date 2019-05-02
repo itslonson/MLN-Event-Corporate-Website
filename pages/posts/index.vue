@@ -25,6 +25,25 @@
                 </article>
             </nuxt-link>
 
+            <nuxt-link :to="'/posts/' + 3" class="post-preview">
+                <article>
+                    <div class="post-thumbnail" style="background-image : url('https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/3/2016/05/10105129/discount-codes-reach-more-people-eventbrite.png')"></div>
+                    <div class="post-content">
+                        <h1>Название поста 3</h1>
+                        <p>Текст - превью 3</p>
+                    </div>
+                </article>
+            </nuxt-link>
+            
+            <nuxt-link :to="'/posts/' + 4" class="post-preview">
+                <article>
+                    <div class="post-thumbnail" style="background-image : url('https://blogmedia.evbstatic.com/wp-content/uploads/wpmulti/sites/3/2016/05/10105129/discount-codes-reach-more-people-eventbrite.png')"></div>
+                    <div class="post-content">
+                        <h1>Название поста 4</h1>
+                        <p>Текст - превью 4</p>
+                    </div>
+                </article>
+            </nuxt-link>
         </section>
     </div>
 </template>
