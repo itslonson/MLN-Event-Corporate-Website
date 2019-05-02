@@ -1,6 +1,6 @@
 <template>
     <div class="posts-page">
-
+        <p>Страница постов</p>
     </div>
 </template>
 

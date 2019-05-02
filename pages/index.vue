@@ -1,20 +1,21 @@
 <template>
 <div class="content">
+
     <nav class="menu">
-        <ul>
-            <li><a class="wedding" href="#">свадьба</a></li>
-            <li><a href="#">корпоративы</a></li>
-            <li><a href="#">для детей</a></li>
-            <li><a href="#">VIP</a></li>
+        <ul class="menu-ul">
+            <li class="menu-li"><nuxt-link to="/posts">свадьба</nuxt-link></li>
+            <li class="menu-li"><nuxt-link to="/posts">корпоративы</nuxt-link></li>
+            <li class="menu-li"><nuxt-link to="/posts">для детей</nuxt-link></li>
+            <li class="menu-li"><nuxt-link to="/posts">VIP</nuxt-link></li>
         </ul>
     </nav>
 
     <nav class="tabs">
         <ul class="tabs-ul">
-            <li class="tabs-li"><a href="#">о нас</a></li>
-            <li class="tabs-li"><a href="#">портфолио</a></li>
-            <li class="tabs-li"><a href="#">loft</a></li>
-            <li class="tabs-li"><a href="#">блог</a></li>
+            <li class="tabs-li"><nuxt-link to="/posts">о нас</nuxt-link></li>
+            <li class="tabs-li"><nuxt-link to="/posts">портфолио</nuxt-link></li>
+            <li class="tabs-li"><nuxt-link to="/posts">LOFT</nuxt-link></li>
+            <li class="tabs-li"><nuxt-link to="/posts">блог</nuxt-link></li>
         </ul>
     </nav>
 
@@ -43,33 +44,6 @@
 
 <style scoped>
 
-.menu{
-    position: absolute;
-    top: 15%;
-    left: 70%;
-    z-index: 4;
-}
-
-.menu a::before {
-    content: '';
-    display: block;
-    height: 5px;
-    background-color: rgb(249, 121, 163);
-
-    position: absolute;
-    top: 25px;
-    width: 0%;
-    transition: all ease-in-out 250ms;
-}
-
-.menu a:hover{
-    color: #fff;
-}
-
-.menu a:hover::before {
-    width: 100%;
-}
-
 ul{
     list-style: none;
     z-index: 4;
@@ -77,7 +51,7 @@ ul{
 
 li{
     position:relative;
-    padding: 0px 0px 0px 0px;
+    padding: 0px;
     margin: 5px 0px 40px 0px;
     text-transform:uppercase;
     cursor:pointer;
@@ -92,6 +66,49 @@ a{
     font-size: 1.3em;
 }
 
+.menu{
+    position: absolute;
+    top: 15%;
+    left: 70%;
+    z-index: 4;
+}
+
+.menu-ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    z-index: 4;
+}
+
+.menu-li{
+    position:relative;
+    padding: 0px 0px 0px 0px;
+    margin: 20px 0px;
+    text-transform:uppercase;
+    cursor:pointer;
+    z-index: 4;
+}
+
+.menu a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: rgb(249, 121, 163);
+
+    position: absolute;
+    top: 26px;
+    width: 0%;
+    transition: all ease-in-out 250ms;
+}
+
+.menu a:hover{
+    color: #fff;
+}
+
+.menu a:hover::before {
+    width: 100%;
+}
+
 .tabs{
     position: absolute;
     top: 55%;
@@ -101,17 +118,17 @@ a{
 
 .tabs-ul{
     display: flex;
+    flex-direction: row;
     list-style: none;
     z-index: 4;
 }
 
 .tabs-li{
     position:relative;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 20px 0px 20px;
+    padding: 0px;
+    margin: 0px 20px ;
     text-transform:uppercase;
     cursor:pointer;
-    text-align:center;
     z-index: 4;
 }
 
