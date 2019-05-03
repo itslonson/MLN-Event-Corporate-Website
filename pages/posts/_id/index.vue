@@ -14,6 +14,13 @@
     </div>
 </template>
 
+<script>
+export default {
+  layout:'blog'
+}
+</script>
+
+
 <style scoped>
 .single-post-page {
   padding: 30px;

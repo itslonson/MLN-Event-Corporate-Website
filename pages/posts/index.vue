@@ -2,24 +2,17 @@
     <div class="posts-page">
         <section class="intro">
         </section>
-        <section class="featured-posts">
-          <PostPreview
-            id="1"
-            thumbnail="https://static1.squarespace.com/static/5aadc54285ede1bd72181a3a/t/5aadccec0e2e725448d54c7c/1521339652089/shutterstock_538256848.jpg?format=1500w"
-            title="Title Test"
-            previewText="Preview Text"
-          />
-        </section>
+        <PostList/>
     </div>
 </template>
 
 <script>
-import PostPreview from '@/components/Posts/PostPreview'
+import PostList from '@/components/Posts/PostList'
 
 export default {
   layout: 'blog',
   components:{
-    PostPreview
+    PostList
   }
 }
 </script>
@@ -46,15 +39,6 @@ export default {
   .intro h1 {
     font-size: 2rem;
   }
-}
-
-.featured-posts {
-  display: flex;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
 }
 </style>
 

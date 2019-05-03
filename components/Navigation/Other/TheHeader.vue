@@ -3,19 +3,13 @@
   <header class="the-header">
     <TheSideNavToggle @toggle="$emit('sidenavToggle')" />
     <div class="logo">
-      <nuxt-link to="/">MLN-EVENT</nuxt-link>
+      <nuxt-link to="/"><img src="~assets/logo.png" alt=""></nuxt-link>
     </div>
     <div class="spacer"></div>
     <div class="navigation-items">
       <ul class="nav-list">
-        <li><nuxt-link to="/posts" class="nav-item">о нас</nuxt-link></li>
-        <li><nuxt-link to="/posts" class="nav-item">портфолио</nuxt-link></li>
-        <li><nuxt-link to="/posts" class="nav-item">LOFT</nuxt-link></li>
         <li><nuxt-link to="/posts" class="nav-item">блог</nuxt-link></li>
-        <li><nuxt-link to="/posts" class="nav-item">свадьба</nuxt-link></li>
-        <li><nuxt-link to="/posts" class="nav-item">корпоративы</nuxt-link></li>
-        <li><nuxt-link to="/posts" class="nav-item">для детей</nuxt-link></li>
-        <li><nuxt-link to="/posts" class="nav-item">VIP</nuxt-link></li>
+        <li><nuxt-link to="/admin" class="nav-item">админка</nuxt-link></li>
       </ul>
     </div>
   </header>
@@ -36,10 +30,6 @@ export default {
 
 <style scoped>
 
-a{
-    text-decoration: none;
-  color: white;
-}
 .header-container {
   height: 60px;
 }
@@ -58,8 +48,9 @@ a{
 }
 
 .logo {
-  margin: 0 10px;
-  font-size: 1.3rem;
+  margin: 0 -200px;
+  transform: scale(0.23);
+  float: left;
 }
 
 .logo a {
@@ -97,9 +88,15 @@ a{
   color: white;
 }
 
-.nav-item a:hover,
-.nav-item a:active,
-.nav-item a.nuxt-link-active {
+.nav-item a:hover, .nav-item a:active, .nav-item a.nuxt-link-active {
+  color: red;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover, a:active, a.nuxt-link-active {
   color: red;
 }
 </style>

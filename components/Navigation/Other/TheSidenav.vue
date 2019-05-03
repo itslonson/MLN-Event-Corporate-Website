@@ -11,14 +11,8 @@
       <ul
         class="nav-list"
         @click="$emit('close')">
-        <li><nuxt-link to="/posts" class="nav-item">о нас</nuxt-link></li>
-        <li><nuxt-link to="/posts" class="nav-item">портфолио</nuxt-link></li>
-        <li><nuxt-link to="/posts" class="nav-item">LOFT</nuxt-link></li>
         <li><nuxt-link to="/posts" class="nav-item">блог</nuxt-link></li>
-        <li><nuxt-link to="/posts" class="nav-item">свадьба</nuxt-link></li>
-        <li><nuxt-link to="/posts" class="nav-item">корпоративы</nuxt-link></li>
-        <li><nuxt-link to="/posts" class="nav-item">для детей</nuxt-link></li>
-        <li><nuxt-link to="/posts" class="nav-item">VIP</nuxt-link></li>
+        <li><nuxt-link to="/admin" class="nav-item">админка</nuxt-link></li>
       </ul>
     </div>
   </transition>
