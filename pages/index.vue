@@ -1,30 +1,31 @@
 <template>
 <div class="content">
     <div class="container">
-        
-        <nav class="tabs">
-            <ul class="tabs-ul">
-                <li class="tabs-li"><nuxt-link to="/posts">о нас</nuxt-link></li>
-                <li class="tabs-li"><nuxt-link to="/posts">портфолио</nuxt-link></li>
-                <li class="tabs-li"><nuxt-link to="/posts">LOFT</nuxt-link></li>
-                <li class="tabs-li"><nuxt-link to="/posts">блог</nuxt-link></li>
-            </ul>
-        </nav>
-        
+        <div class="nav-logo">
+            <nav class="tabs">
+                <ul class="tabs-ul">
+                    <li class="tabs-li"><nuxt-link to="/posts">о нас</nuxt-link></li>
+                    <li class="tabs-li"><nuxt-link to="/posts">портфолио</nuxt-link></li>
+                    <li class="tabs-li"><nuxt-link to="/posts">LOFT</nuxt-link></li>
+                    <li class="tabs-li"><nuxt-link to="/posts">блог</nuxt-link></li>
+                </ul>
+            </nav>
+
+            <div class="logo">
+                <img  src="~assets/logo.png" alt="">
+                <h3 class="motto">ВАШ ЛУЧШИЙ ПРАЗДНИК</h3>
+            </div>
+        </div>
         <nav class="menu">
             <ul class="menu-ul">
-                <li class="menu-li"><nuxt-link to="/posts">свадьба</nuxt-link></li>
-                <li class="menu-li"><nuxt-link to="/posts">корпоративы</nuxt-link></li>
-                <li class="menu-li"><nuxt-link to="/posts">для детей</nuxt-link></li>
-                <li class="menu-li"><nuxt-link to="/posts">VIP</nuxt-link></li>
+                <li class="menu-li"><nuxt-link to="/posts" >свадьба</nuxt-link></li>
+                <li class="menu-li"><nuxt-link to="/posts" >корпоративы</nuxt-link></li>
+                <li class="menu-li"><nuxt-link to="/posts" >для детей</nuxt-link></li>
+                <li class="menu-li"><nuxt-link to="/posts" >VIP</nuxt-link></li>
             </ul>
         </nav>
 
 
-        <div class="logo">
-            <img  src="~assets/logo.png" alt="">
-            <h3 class="motto">ВАШ ЛУЧШИЙ ПРАЗДНИК</h3>
-        </div>
     </div>
     <div class="flowers">
         <img src="~assets/flowers.png" alt="">
@@ -57,8 +58,6 @@ ul{
 
 li{
     position:relative;
-    padding: 0px;
-    margin: 5px 0px 40px 0px;
     text-transform:uppercase;
     cursor:pointer;
     text-align:center;
@@ -67,7 +66,7 @@ li{
 
 a{
     text-decoration: none;
-    color: #e0e0e0;
+    color: #fff;
     font-weight: 600;
     font-size: 1.3em;
 }
@@ -75,27 +74,29 @@ a{
 .container{
     display: flex;
     justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, rgb(248, 182, 78) 0%, rgb(251, 82, 82) 100%) no-repeat center center fixed;
+    align-items: flex-start;
+    background: linear-gradient(to right, rgb(248, 182, 78) 0%, rgb(251, 82, 82) 100%);
     height: 100vh;
 }
 
-.tabs{
-    position: flex;
-    top: 55%;
-    left: 7.75%;
-    z-index: 4;
+.nav-logo{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 5rem;
+    margin-block-start: 5rem;
+    flex: 2;
+    order: 1;
+    flex-direction: column-reverse;
 }
 
-.menu{
-    position: flex;
-    top: 15%;
-    left: 70%;
+.tabs{
+    flex-direction: row;
+    flex-wrap: nowrap;
     z-index: 4;
 }
 
 .logo{
-    display: flex;
     flex-wrap: wrap;
     z-index: 4;
     transform: scale(0.8);
@@ -107,6 +108,15 @@ a{
     font-weight: 400;
     font-size: 2.5em;
 }
+
+.menu{
+    flex:1;
+    flex-basis: auto;
+    margin-block-start: 8rem;
+    order: 2;
+    z-index: 4;
+}
+
 .menu-ul{
     display: flex;
     flex-direction: column;
@@ -116,31 +126,15 @@ a{
 
 .menu-li{
     position:relative;
-    padding: 0px 0px 0px 0px;
-    margin: 20px 0px;
+    padding: 0px;
+    margin: 16px 0px ;
     text-transform:uppercase;
     cursor:pointer;
     z-index: 4;
 }
 
-.menu a::before {
-    content: '';
-    display: block;
-    height: 5px;
-    background-color: rgb(249, 121, 163);
-
-    position: absolute;
-    top: 26px;
-    width: 0%;
-    transition: all ease-in-out 250ms;
-}
-
 .menu a:hover{
-    color: #fff;
-}
-
-.menu a:hover::before {
-    width: 100%;
+    color: rgb(245, 220, 0);
 }
 
 .tabs-ul{
@@ -163,7 +157,7 @@ a{
     content: '';
     display: block;
     height: 5px;
-    background-color: rgb(249, 121, 163);
+    background-color:  rgb(201, 40, 94);
 
     position: absolute;
     bottom: 26px;
@@ -172,7 +166,7 @@ a{
 }
 
 .tabs a:hover{
-    color: #fff;
+    color: rgb(201, 40, 94);
 }
 
 .tabs a:hover::before {
@@ -215,6 +209,10 @@ a{
     position: fixed;
     bottom: -4px;
     z-index: 1;
+}
+
+img {
+    user-select: none;
 }
 </style>
 
