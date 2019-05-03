@@ -27,9 +27,6 @@
 
 
     </div>
-    <div class="flowers">
-        <img src="~assets/flowers.png" alt="">
-    </div>
 
     <div class="bubbles">
         <img src="~assets/bubbles.png" alt="">
@@ -51,6 +48,7 @@ export default {
 
 <style scoped>
 
+
 ul{
     list-style: none;
     z-index: 4;
@@ -71,12 +69,16 @@ a{
     font-size: 1.3em;
 }
 
+.burger-nav{
+    display: none;
+}
+
 .container{
     display: flex;
     justify-content: center;
     align-items: flex-start;
     background: linear-gradient(to right, rgb(248, 182, 78) 0%, rgb(251, 82, 82) 100%);
-    height: 100vh;
+    height: 90vh;
 }
 
 .nav-logo{
@@ -181,15 +183,6 @@ a{
     transform: scale(1.2);
 }
 
-.flowers{
-    display: none;
-    position: absolute;
-    top: 19%;
-    left: 57%;
-    z-index: 3;
-    transform: scale(1.5);
-}
-
 .yellow-wave{
     background: url('~assets/yellow_wave.png') bottom no-repeat;
     width: 100%;
@@ -214,5 +207,41 @@ a{
 img {
     user-select: none;
 }
+
+@media only screen and (max-width: 900px){
+.menu .menu-ul .menu-li{
+    all:unset;
+    display: none;
+}
+
+.tabs .tabs-ul .tabs-li{
+    all: unset;
+    display: none;
+}
+
+.nav-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    order: 1;
+    flex-direction: column-reverse;
+}
+
+.logo{
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 4;
+    transform: scale(0.5);
+}
+
+ul{
+    list-style: none;
+    z-index: 4;
+}
+
+}
+
 </style>
 
