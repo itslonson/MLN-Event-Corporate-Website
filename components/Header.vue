@@ -11,12 +11,11 @@
 <style scoped>
 .top-header{
   width: 100%;
-
   height: 60px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: transparent;
+  background: linear-gradient(to right, rgb(123, 182, 78) 0%, rgb(251, 82, 82) 100%) no-repeat center center fixed;
   z-index: 999;
   box-sizing: border-box;
   padding: 0 20px;

@@ -26,6 +26,12 @@ export default {
 </script>
 
 <style scoped>
+
+.posts-page{
+  background: linear-gradient(to right, rgb(123, 182, 78) 0%, rgb(251, 82, 82) 100%) no-repeat center center fixed;
+  height: 100vh;
+}
+
 .intro {
     display: flex;
     align-items: center;

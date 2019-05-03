@@ -76,6 +76,8 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(to right, rgb(248, 182, 78) 0%, rgb(251, 82, 82) 100%) no-repeat center center fixed;
+    height: 100vh;
 }
 
 .tabs{
