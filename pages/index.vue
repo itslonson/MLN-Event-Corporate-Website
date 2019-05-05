@@ -4,24 +4,24 @@
         <div class="nav-logo">
             <nav class="tabs">
                 <ul class="tabs-ul">
-                    <li class="tabs-li"><nuxt-link to="/posts">о нас</nuxt-link></li>
-                    <li class="tabs-li"><nuxt-link to="/posts">портфолио</nuxt-link></li>
-                    <li class="tabs-li"><nuxt-link to="/posts">LOFT</nuxt-link></li>
-                    <li class="tabs-li"><nuxt-link to="/posts">блог</nuxt-link></li>
+                    <li class="tabs-li  disableselect disabledrag"><nuxt-link to="/posts">о нас</nuxt-link></li>
+                    <li class="tabs-li  disableselect disabledrag"><nuxt-link to="/posts">портфолио</nuxt-link></li>
+                    <li class="tabs-li  disableselect disabledrag"><nuxt-link to="/posts">LOFT</nuxt-link></li>
+                    <li class="tabs-li  disableselect disabledrag"><nuxt-link to="/posts">блог</nuxt-link></li>
                 </ul>
             </nav>
 
             <div class="logo">
-                <img  src="~assets/logo.png" alt="">
+                <img  src="~assets/logo.png" class="disableselect disabledrag" alt="">
                 <h3 class="motto">ВАШ ЛУЧШИЙ ПРАЗДНИК</h3>
             </div>
         </div>
         <nav class="menu">
             <ul class="menu-ul">
-                <li class="menu-li"><nuxt-link to="/posts" >свадьба</nuxt-link></li>
-                <li class="menu-li"><nuxt-link to="/posts" >корпоративы</nuxt-link></li>
-                <li class="menu-li"><nuxt-link to="/posts" >для детей</nuxt-link></li>
-                <li class="menu-li"><nuxt-link to="/posts" >VIP</nuxt-link></li>
+                <li class="menu-li disableselect disabledrag"><nuxt-link to="/posts" >свадьба</nuxt-link></li>
+                <li class="menu-li disableselect disabledrag"><nuxt-link to="/posts" >корпоративы</nuxt-link></li>
+                <li class="menu-li disableselect disabledrag"><nuxt-link to="/posts" >для детей</nuxt-link></li>
+                <li class="menu-li disableselect disabledrag"><nuxt-link to="/posts" >VIP</nuxt-link></li>
             </ul>
         </nav>
 
@@ -29,7 +29,7 @@
     </div>
 
     <div class="bubbles">
-        <img src="~assets/bubbles.png" alt="">
+        <img src="~assets/bubbles.png" alt=""  class="disableselect disabledrag">
     </div>
 
     <div class="purple-wave">
@@ -192,6 +192,19 @@ a{
     bottom: 100px;
     right: 100px;
     transform: scale(1.4);
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge*/
+    user-select: none;
+    
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
 }
 
 .purple-wave{
@@ -202,10 +215,19 @@ a{
     position: fixed;
     bottom: -4px;
     z-index: 1;
-}
 
-img {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge*/
     user-select: none;
+    
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
 }
 
 @media only screen and (max-width: 900px){
@@ -242,6 +264,25 @@ ul{
 }
 
 }
+
+.disableselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge*/
+   user-select: none;
+}
+
+.disabledrag{
+   -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+   user-drag: none;
+}
+
+
 
 </style>
 

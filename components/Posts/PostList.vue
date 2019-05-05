@@ -1,11 +1,12 @@
 <template>
 <section class="post-list">
     <PostPreview
-    id="1"
+    v-for="post in posts" :key="post.id"
+    :id="post.id"
     :is-admin="isAdmin"
-    thumbnail="https://static1.squarespace.com/static/5aadc54285ede1bd72181a3a/t/5aadccec0e2e725448d54c7c/1521339652089/shutterstock_538256848.jpg?format=1500w"
-    title="Title Test"
-    previewText="Preview Text"
+    :thumbnail="post.thumbnail"
+    :title="post.title"
+    :previewText="post.previewText"
     />
 </section>
 </template>
@@ -22,6 +23,10 @@ export default {
     isAdmin:{
       type: Boolean,
       default: false
+    },
+    posts:{
+      type: Array,
+      required: true
     }
   }
 }
