@@ -2,7 +2,8 @@
   <form @submit.prevent="onSave">
     <AppControlInput v-model="editedPost.author">Имя Автора</AppControlInput>
     <AppControlInput v-model="editedPost.title">Название</AppControlInput>
-    <AppControlInput v-model="editedPost.thumbnailLink">Ссылка на thumbnail</AppControlInput>
+    <AppControlInput v-model="editedPost.thumbnail">Ссылка на картинку поста</AppControlInput>
+    <AppControlInput control-type="textarea" v-model="editedPost.previewText">Прьевью к посту</AppControlInput>
     <AppControlInput control-type="textarea" v-model="editedPost.content">Контент</AppControlInput>
     <AppButton type="submit">Опубликовать</AppButton>
     <AppButton type="button" style="margin-left: 10px" btn-style="cancel" @click="onCancel">Отменить</AppButton>
@@ -31,7 +32,8 @@ export default {
             editedPost: this.post ? {...this.post} : {
                 author: '',
                 title: '',
-                thumbnailLink: '',
+                thumbnail: '',
+                previewText: '',
                 content: ''
             }
         }
@@ -39,7 +41,7 @@ export default {
     methods: {
         onSave(){
             //сохранить
-            console.log(this.editedPost);
+            this.$emit('submit', this.editedPost)
         },
         onCancel(){
             //вернуться

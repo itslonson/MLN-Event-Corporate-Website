@@ -1,41 +1,70 @@
 import Vuex from "vuex";
+import axios from "axios";
 
 const createStore = () => {
     return new Vuex.Store({
+
       state: {
         loadedPosts: []
       },
+
       mutations: {
+
         setPosts(state, posts) {
           state.loadedPosts = posts;
+        },
+
+        addPost(state, post){
+          state.loadedPosts.push(post)
+        },
+
+        editPost(state, editedPost){
+          const postIndex = state.loadedPosts.findIndex(post => post.id === editedPost.id);
+          state.loadedPosts[postIndex] = editedPost
+
         }
       },
+
       actions: {
+
         nuxtServerInit(vuexContext, context) {
-          return new Promise((resolve, reject) => {
-            setTimeout(() => {
-              vuexContext.commit("setPosts", [
-                { 
-                    id: '1', 
-                    title: 'First Test Post', 
-                    previewText: 'First preview text test', 
-                    thumbnail: 'https://static1.squarespace.com/static/5aadc54285ede1bd72181a3a/t/5aadccec0e2e725448d54c7c/1521339652089/shutterstock_538256848.jpg?format=1500w'
-                  },
-                  {
-                    id: '2', 
-                    title: 'Second Test Post', 
-                    previewText: 'Second preview text test', 
-                    thumbnail: 'https://azialand.ru/wp-content/uploads/2013/11/331331897.jpg'
-                  } 
-              ]);
-              resolve();
-            }, 1000);
-          });
+          return axios.get('https://mln-event-2ce70.firebaseio.com/posts.json')
+          .then(res => {
+            const postsArray = []
+            for (const key in res.data){
+              postsArray.push({...res.data[key], id: key})
+            }
+            vuexContext.commit('setPosts', postsArray)
+          })
+          .catch(e => context.error(e))
         },
+
+        addPost(vuexContext, post) {
+          const createdPost = {
+            ...post,
+            updatedDate: new Date()
+          }
+          return axios.post('https://mln-event-2ce70.firebaseio.com/posts.json', createdPost)
+          .then(result => {
+            vuexContext.commit('addPost', {...createdPost, id: result.data.name})
+          })
+          .catch(e => console.log(e))
+        },
+
+        editPost(vuexContext, editedPost){
+          return axios.put('https://mln-event-2ce70.firebaseio.com/posts/' + 
+          editedPost.id + '.json', editedPost)
+          .then (result => {
+            vuexContext.commit('editPost', editedPost)
+          })
+          .catch(e => console.log(e))
+        },
+
         setPosts(vuexContext, posts) {
           vuexContext.commit("setPosts", posts);
         }
       },
+
       getters: {
         loadedPosts(state) {
           return state.loadedPosts;

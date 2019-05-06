@@ -3,7 +3,7 @@
         <section class="post">
             <h1 class="post-title">{{loadedPost.title}}</h1>
             <div class="post-details">
-                <div class="post-detail">Обновлено {{loadedPost.updatedDate}}</div>
+                <div class="post-detail">Дата {{loadedPost.updatedDate}}</div>
                 <div class="post-detail">Автор {{loadedPost.author}}</div>
             </div>
             <p class="post-content">{{loadedPost.content}}</p>
@@ -15,22 +15,18 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   layout:'blog',
-  asyncData(context, callback){
-    setTimeout(() => {
-      callback(null, {
-        loadedPost:{
-          id: '1',
-          title: "First Test Post (ID: "+ context.params.id +")", 
-          previewText: 'First preview text test',
-          author: 'Авдюков Иван Игоревич',
-          updatedDate: new Date(), 
-          thumbnail: 'https://static1.squarespace.com/static/5aadc54285ede1bd72181a3a/t/5aadccec0e2e725448d54c7c/1521339652089/shutterstock_538256848.jpg?format=1500w',
-          content: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit cum libero, incidunt repellendus quidem dignissimos ea, suscipit voluptas ducimus nemo autem id perferendis natus quibusdam sint labore recusandae laborum consectetur.'
-        }
-      })
-    }, 1000);
+  asyncData(context){
+    return axios.get('https://mln-event-2ce70.firebaseio.com/posts/' + context.params.id + '.json')
+    .then(res => {
+      return {
+        loadedPost: res.data
+      }
+    })
+    .catch(e => context.error(e))
   }
 }
 </script>
