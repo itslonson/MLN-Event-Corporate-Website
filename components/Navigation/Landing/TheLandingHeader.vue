@@ -77,7 +77,7 @@ export default {
   
   .the-header {
     z-index: -999;
-    background: linear-gradient(to right, rgb(248, 182, 78) 0%, rgb(251, 82, 82) 100%);
+    background: linear-gradient(to right, #E9C000 0%, #FF03FC 100%);
   }
 
   .logo{

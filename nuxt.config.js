@@ -15,7 +15,22 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto'}
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto'},
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css'}
+    ],
+    script: [
+      {
+        src: "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js",
+        type: "text/javascript"
+      },
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js",
+        type: "text/javascript"
+      },
+      {
+        src: "https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js",
+        type: "text/javascript"
+      }
     ]
   },
 

@@ -3,7 +3,7 @@
   <header class="the-header">
     <TheSideNavToggle @toggle="$emit('sidenavToggle')" />
     <div class="logo">
-      <nuxt-link to="/"><img src="~assets/logo.png" alt=""></nuxt-link>
+      <nuxt-link to="/">MLN-EVENT</nuxt-link>
     </div>
     <div class="spacer"></div>
     <div class="navigation-items">
