@@ -24,13 +24,20 @@ export default {
 </script>
 
 <style >
-html {
+
+html,body{
+  margin: 0px;
+  padding: 0px;
   font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-body{
-  margin: 0;
-}
+html::-webkit-scrollbar { width: 0 !important }
+
+
+
 </style>
 
 
