@@ -1,0 +1,411 @@
+<template>
+  <nav class="nav">
+    <div class="container">
+      <div class="logo">
+        <nuxt-link to="/" class="long">Millennium Event</nuxt-link>
+        <nuxt-link to="/" class="short">ME</nuxt-link>
+      </div>
+      <div id="menu-id" class="menu">
+        <ul class="nav-links">
+          <li>
+            <nuxt-link to="/about">о нас</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/services">услуги</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/portfolio">портфолио</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/loft">loft</nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/posts">блог</nuxt-link>
+          </li>
+        </ul>
+      </div>
+      <span class="nav-trigger">
+        <i></i>
+        <i></i>
+        <i></i>
+      </span>
+    </div>
+  </nav>
+</template>
+
+<script>
+export default {
+  mounted() {
+    $(window).scroll(function() {
+      if ($(document).scrollTop() > $(".nav-overlay").height()) {
+        $(".nav").addClass("nav-min");
+      } else {
+        $(".nav").removeClass("nav-min");
+      }
+    });
+
+    $(".nav-trigger").click(function() {
+      $(this).toggleClass("active");
+      $("#menu-id").toggleClass("show-list");
+      $("#menu-id").fadeIn();
+    });
+  }
+};
+</script>
+
+
+<style scoped>
+/* Navbar section */
+
+.nav {
+  width: 100%;
+  height: 65px;
+  position: fixed;
+  line-height: 65px;
+  text-align: center;
+  z-index: 100;
+}
+
+.nav .logo {
+  float: left;
+  width: auto;
+  height: auto;
+  padding-left: 3rem;
+}
+
+.nav .logo .short {
+  display: none;
+  font-size: 2em;
+  padding-left: 0.5em;
+}
+
+.nav .logo a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.75em;
+  font-weight: 600;
+}
+
+.nav .logo a:hover {
+  color: #ff03fc;
+}
+
+.nav-min {
+  padding: 0;
+  background: transparent;
+}
+
+.nav .menu {
+  height: 65px;
+  float: right;
+}
+
+.nav .menu ul {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav .menu ul li {
+  width: auto;
+  height: 65px;
+  padding: 0;
+  padding-right: 3rem;
+}
+
+.nav .menu ul li a,
+.tel {
+  text-decoration: none;
+  color: black;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.nav .menu ul li a:hover,
+.tel:hover {
+  color: #e9c000;
+}
+
+.nav-trigger {
+  display: none;
+}
+
+.nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    margin: 0;
+  }
+
+  .tel {
+    float: right;
+    padding: 0px 48px 0px 0px;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .tel {
+    position: absolute;
+    right: 15%;
+  }
+
+  .nav-trigger {
+    display: block;
+  }
+
+  .nav .menu {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .nav .show-list {
+    height: auto;
+    display: none;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .nav .menu ul {
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: transparent;
+    background-position: center top;
+  }
+
+  .nav .menu ul li {
+    width: 100%;
+    text-align: right;
+  }
+
+  .nav .menu ul li a {
+    text-align: center;
+    width: 100%;
+    font-size: 1em;
+    padding: 20px;
+  }
+
+  .nav .media_button {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .tel {
+    position: absolute;
+    font-size: 1em;
+    right: 24%;
+  }
+
+  .nav .logo .short {
+    display: unset;
+  }
+
+  .nav .logo .long {
+    display: none;
+  }
+
+  .nav-trigger {
+    display: block;
+  }
+
+  .nav .logo {
+    float: left;
+    width: auto;
+    height: auto;
+    padding-left: 1rem;
+  }
+
+  .nav .logo a {
+    font-size: 1.25em;
+  }
+
+  .nav .menu {
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .nav .show-list {
+    height: auto;
+    display: none;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .nav .menu ul {
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #7200e1;
+    opacity: 0.9;
+    background-position: center top;
+  }
+
+  .nav .menu ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav .menu ul li a {
+    text-align: center;
+    width: 100%;
+    font-size: 1em;
+    padding: 20px;
+  }
+
+  .nav .media_button {
+    display: block;
+  }
+}
+
+.nav-trigger {
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  margin: auto;
+  position: absolute;
+  right: 30px;
+  top: 0;
+  bottom: 0;
+}
+
+.nav-trigger i {
+  background-color: black;
+  border-radius: 2px;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+}
+
+.nav-trigger i:nth-child(1) {
+  -webkit-animation: outT 0.4s backwards;
+  animation: outT 0.4s backwards;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse;
+}
+
+.nav-trigger i:nth-child(2) {
+  margin: 5px 0;
+  -webkit-animation: outM 0.4s backwards;
+  animation: outM 0.4s backwards;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse;
+}
+
+.nav-trigger i:nth-child(3) {
+  -webkit-animation: outBtm 0.4s backwards;
+  animation: outBtm 0.4s backwards;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse;
+}
+
+.nav-trigger.active i:nth-child(1) {
+  -webkit-animation: inT 0.4s forwards;
+  animation: inT 0.4s forwards;
+}
+
+.nav-trigger.active i:nth-child(2) {
+  -webkit-animation: inM 0.4s forwards;
+  animation: inM 0.4s forwards;
+}
+
+.nav-trigger.active i:nth-child(3) {
+  -webkit-animation: inBtm 0.4s forwards;
+  animation: inBtm 0.4s forwards;
+}
+
+@keyframes inM {
+  50% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes outM {
+  50% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes inT {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(9px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(9px) rotate(135deg);
+  }
+}
+
+@keyframes outT {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(9px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(9px) rotate(135deg);
+  }
+}
+
+@keyframes inBtm {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-9px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-9px) rotate(135deg);
+  }
+}
+
+@keyframes outBtm {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-9px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-9px) rotate(135deg);
+  }
+}
+</style>
+

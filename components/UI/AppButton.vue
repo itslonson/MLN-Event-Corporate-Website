@@ -1,38 +1,54 @@
 <template>
-  <button
-    class="button"
-    :class="btnStyle"
-    v-bind="$attrs"
-    v-on="$listeners"><slot /></button>
+  <button class="button" :class="btnStyle" v-bind="$attrs" v-on="$listeners">
+    <slot/>
+  </button>
 </template>
 
 <script>
 export default {
-  name: 'AppButton',
+  name: "AppButton",
   props: {
     btnStyle: {
       type: String,
-      default: ''
+      default: ""
     }
   }
-}
+};
 </script>
 
 
 <style scoped>
-.button {
-  font: inherit;
-  background-color: black;
-  color: white;
-  padding: 5px;
-  cursor: pointer;
-  border: 1px solid black;
+@font-face {
+  font-family: "FuturaRegular";
+  src: url("~assets/fonts/FuturaPT-Book.woff") format("woff");
 }
 
-.button:hover,
-.button:active {
-  background-color: rgb(51, 51, 51);
-  border: 1px solid black;
+@font-face {
+  font-family: "FuturaBold";
+  src: url("~assets/fonts/FuturaPT-Bold.woff") format("woff");
+}
+
+.button {
+  text-transform: uppercase;
+  font-family: "FuturaMedium";
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 40px;
+  color: #444444;
+  text-align: center;
+  background: white;
+  border-radius: 50px;
+  border-width: 1px;
+  border-color: rgb(221, 221, 221);
+  height: 40px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #ededed;
 }
 
 .inverted {

@@ -1,34 +1,38 @@
 <template>
-    <div class="single-post-page">
-        <section class="post">
-            <h1 class="post-title">{{loadedPost.title}}</h1>
-            <div class="post-details">
-                <div class="post-detail">Дата {{loadedPost.updatedDate}}</div>
-                <div class="post-detail">Автор {{loadedPost.author}}</div>
-            </div>
-            <p class="post-content">{{loadedPost.content}}</p>
-        </section>
-        <section class="post-feedback">
-            <p>Оставьте пожелания и вопросы по этому <a href="mailto:omnixejiharu@gmail.com">адресу</a></p>
-        </section>
-    </div>
+  <div class="single-post-page">
+    <section class="post">
+      <h1 class="post-title">{{loadedPost.title}}</h1>
+      <div class="post-details">
+        <div class="post-detail">Опубликовано {{loadedPost.updatedDate | date}}</div>
+        <div class="post-detail">Автор {{loadedPost.author}}</div>
+      </div>
+      <p class="post-content">{{loadedPost.content}}</p>
+    </section>
+    <section class="post-feedback">
+      <p>
+        Оставьте пожелания и вопросы по этому
+        <a href="mailto:omnixejiharu@gmail.com">адресу</a>
+      </p>
+    </section>
+  </div>
 </template>
 
 <script>
 import axios from "axios";
 
 export default {
-  layout:'blog',
-  asyncData(context){
-    return axios.get('https://mln-event-2ce70.firebaseio.com/posts/' + context.params.id + '.json')
-    .then(res => {
-      return {
-        loadedPost: res.data
-      }
-    })
-    .catch(e => context.error(e))
+  layout: "blog",
+  asyncData(context) {
+    return axios
+      .get(process.env.fbURL + "/posts/" + context.params.id + ".json")
+      .then(res => {
+        return {
+          loadedPost: res.data
+        };
+      })
+      .catch(e => context.error(e));
   }
-}
+};
 </script>
 
 

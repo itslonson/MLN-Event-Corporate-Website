@@ -1,16 +1,37 @@
 <template>
-  <div class="about-page">
-    <h1>This is my absolutely fantastic "About Me" Page!</h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam officiis ab voluptatibus assumenda error quas deleniti eius? Suscipit, numquam? Quis aliquid non animi numquam amet voluptas dolorum sunt aspernatur commodi?</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam officiis ab voluptatibus assumenda error quas deleniti eius? Suscipit, numquam? Quis aliquid non animi numquam amet voluptas dolorum sunt aspernatur commodi?</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam officiis ab voluptatibus assumenda error quas deleniti eius? Suscipit, numquam? Quis aliquid non animi numquam amet voluptas dolorum sunt aspernatur commodi?</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam officiis ab voluptatibus assumenda error quas deleniti eius? Suscipit, numquam? Quis aliquid non animi numquam amet voluptas dolorum sunt aspernatur commodi?</p>
+  <div class="request-post-section">
+    <section class="new-request-form">
+      <RequestPostForm @submit="onSubmitted" ref="test"/>
+    </section>
   </div>
 </template>
 
+<script>
+import axios from "axios";
+
+export default {
+  methods: {
+    onSubmitted(postData) {
+      this.$store.dispatch("addRequest", postData).then(() => {
+        document.getElementById("myform").reset();
+      });
+    }
+  }
+};
+</script>
+
 <style scoped>
-.about-page {
-  text-align: center;
-  padding: 30px;
+.request-post-section {
+  height: 100vh;
+  background: #999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.new-request-form {
+  font-family: "Roboto", sans-serif;
+}
+
+@media (min-width: 800px) {
 }
 </style>

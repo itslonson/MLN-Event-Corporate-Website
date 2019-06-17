@@ -1,14 +1,14 @@
 <template>
   <div class="error-page">
     <h1>Ой, что-то пошло не так!</h1>
-    <p><a href="/">Вернуться</a>!</p>
+    <p>
+      <a href="/">Вернуться</a>!
+    </p>
   </div>
 </template>
 
 <script>
-export default {
-    layout: 'admin'
-}
+export default {};
 </script>
 
 
