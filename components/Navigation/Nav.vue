@@ -8,7 +8,7 @@
           </li>
 
           <li>
-            <nuxt-link to="/loft" class="link">loft</nuxt-link>
+            <nuxt-link to="/loft" class="link">лофт</nuxt-link>
           </li>
           <li>
             <nuxt-link to="/portfolio" class="link">портфолио</nuxt-link>
