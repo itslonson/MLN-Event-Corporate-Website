@@ -2,29 +2,30 @@
   <main>
     <section class="company-logo">
       <div class="logo-container">
-        <img src="~assets/images/logo/logo.svg" alt="MLN-event logo">
+        <img src="~assets/images/logo/logo.svg" alt="MLN-event logo" class="mln-long">
+        <img src="~assets/images/logo/logo-box.svg" alt="MLN-event logo" class="mln-short">
       </div>
       <div class="event-grid">
         <div class="hr">
-          <nuxt-link to="/services">
+          <nuxt-link to="/services/hr">
             <h5 class="h5-heading">HR events</h5>
             <img src="~assets/images/events/icons/glasses.svg" alt="HR events">
           </nuxt-link>
         </div>
         <div class="weddings">
-          <nuxt-link to="/services">
+          <nuxt-link to="/services/weddings">
             <h5 class="h5-heading">свадьбы</h5>
             <img src="~assets/images/events/icons/flowers.svg" alt="Свадьбы">
           </nuxt-link>
         </div>
         <div class="vip-party">
-          <nuxt-link to="/services">
+          <nuxt-link to="/services/vip">
             <h5 class="h5-heading">VIP party</h5>
-            <img src="~assets/images/events/icons/bowtie.svg" alt="VIP вечеринки">
+            <img src="~assets/images/events/icons/crown.svg" alt="VIP вечеринки">
           </nuxt-link>
         </div>
         <div class="for-kids">
-          <nuxt-link to="/services">
+          <nuxt-link to="/services/kids">
             <h5 class="h5-heading">Детям</h5>
             <img src="~assets/images/events/icons/balloon.svg" alt="Детские праздники">
           </nuxt-link>
@@ -39,7 +40,7 @@
     </a>
     <section class="team" id="team-anchor">
       <div class="team-heading">
-        <img src="~assets/images/logo/logo-box.png" alt="MLN-event лого">
+        <img src="~assets/images/logo/logo-box.svg" alt="MLN-event лого">
         <h1 class="h1-heading color-gray m0">Наша История</h1>
       </div>
       <div class="company-pitch">
@@ -65,10 +66,10 @@
         class="landing-vid"
         style="opacity:0.75;"
         src="~assets/videos/landing-video.mp4"
-        preload
-        autoplay
         muted
         loop
+        
+        autoplay
       ></video>
     </section>
 
@@ -82,32 +83,33 @@
     <section class="events" id="events-anchor">
       <div class="events-header">
         <h1 class="h1-heading color-gray">Мероприятия</h1>
+        <img src="~assets/images/events/graphics/ribbon-l.png" alt="ribbon" class="ribbon-l">
 
         <ul>
-          <nuxt-link to="/services">
-            <li>#HREVENTS</li>
+          <nuxt-link to="/services/hr">
+            <li class="hr-li">#HREVENTS</li>
           </nuxt-link>
-          <nuxt-link to="/services">
-            <li>#СВАДЬБЫ</li>
+          <nuxt-link to="/services/weddings">
+            <li class="wd-li">#СВАДЬБЫ</li>
           </nuxt-link>
-          <nuxt-link to="/services">
-            <li>#VIP</li>
+          <nuxt-link to="/services/vip">
+            <li class="vp-li">#VIP</li>
           </nuxt-link>
-          <nuxt-link to="/services">
-            <li>#ДЕТЯМ</li>
+          <nuxt-link to="/services/kids">
+            <li class="kd-li">#ДЕТЯМ</li>
           </nuxt-link>
         </ul>
       </div>
       <div class="events-content">
         <div class="row">
           <div class="graphics">
-            <img src="~assets/images/events/graphics/hr.png" class="photo" alt="HR мероприятия">
             <img
-              src="~assets/images/events/icons/glasses.svg"
-              alt="HR events"
-              style="width:170px; height:170px;"
-              class="icon"
+              src="~assets/images/events/graphics/hr.png"
+              class="photo"
+              alt="HR мероприятия"
+              style="width:220px;"
             >
+            <img src="~assets/images/events/icons/glasses.svg" alt="HR events" class="icon glasses">
           </div>
           <div class="event-text">
             <h2 class="h2-heading color-gray">HR EVENTS</h2>
@@ -119,13 +121,13 @@
 
         <div class="row">
           <div class="graphics">
-            <img src="~assets/images/events/graphics/weddings.png" class="photo" alt="Свадьбы">
             <img
-              src="~assets/images/events/icons/flowers.svg"
+              src="~assets/images/events/graphics/weddings.png"
+              class="photo"
               alt="Свадьбы"
-              style="width:170px; height:170px;"
-              class="icon"
+              style="width:220px;"
             >
+            <img src="~assets/images/events/icons/flowers.svg" alt="Свадьбы" class="icon flowers">
           </div>
           <div class="event-text">
             <h2 class="h2-heading color-gray">СВАДЬБЫ</h2>
@@ -137,13 +139,13 @@
 
         <div class="row">
           <div class="graphics">
-            <img src="~assets/images/events/graphics/vip.png" class="photo" alt="VIP мероприятия">
             <img
-              src="~assets/images/events/icons/bowtie.svg"
-              alt="VIP Party"
-              style="width:170px; height:170px;"
-              class="icon"
+              src="~assets/images/events/graphics/vip.png"
+              class="photo"
+              alt="VIP мероприятия"
+              style="width:220px;"
             >
+            <img src="~assets/images/events/icons/crown.svg" alt="VIP Party" class="icon crown">
           </div>
           <div class="event-text">
             <h2 class="h2-heading color-gray">VIP PARTY</h2>
@@ -159,12 +161,12 @@
               src="~assets/images/events/graphics/kids.png"
               class="photo"
               alt="Детские мероприятия"
+              style="width:220px;"
             >
             <img
               src="~assets/images/events/icons/balloon.svg"
               alt="Детские праздники"
-              style="width:170px; height:170px;"
-              class="icon"
+              class="icon balloon"
             >
           </div>
           <div class="event-text">
@@ -182,12 +184,13 @@
         <h1 class="h1-heading color-white">мероприятия 2018</h1>
         <h2 class="h2-heading color-white text-center">Мы провели 30 праздников</h2>
       </div>
-      <img src="~assets/event-grid.gif" alt>
+      <img src="~assets/images/events/event-img.png" alt="event images">
     </section>
 
     <section class="loft">
+      <img src="~assets/images/events/graphics/ribbon-s.png" alt="ribbon" class="ribbon-s">
       <div class="loft-heading">
-        <h1 class="h1-heading color-gray">LOFT</h1>
+        <h1 class="h1-heading color-gray">ЛОФТ</h1>
         <h2 class="h2-heading color-gray">
           пространство
           для вашего
@@ -195,12 +198,7 @@
         </h2>
         <p class="regular-text color-gray">
           Подходит для мероприятий разного характера
-          <br>от Дня Рождения и Нового года, до серъезных конференций
-          <br>и важных бизнес-собыйти, в рамках пространства
-        </p>
-        <p class="regular-text color-gray">
-          Подходит для мероприятий разного характера
-          <br>от Дня Рождения и Нового года, до серъезных конференций
+          от Дня Рождения и Нового года, до серъезных конференций
           <br>и важных бизнес-собыйти, в рамках пространства
         </p>
       </div>
@@ -320,6 +318,7 @@ export default {
     if ($(window).width() <= 768) {
       $(".landing-vid").prop("controls", true);
       $(".landing-vid").prop("autoplay", false);
+      $(".landing-vid").prop("preload", false);
     }
   },
   methods: {
@@ -334,102 +333,6 @@ export default {
 
 
 <style scoped>
-* {
-  scroll-behavior: smooth;
-}
-/*FONTS*/
-@font-face {
-  font-family: "FuturaBold";
-  src: url("~assets/fonts/FuturaPT-Bold.woff") format("woff");
-}
-
-@font-face {
-  font-family: "FuturaExtraBold";
-  src: url("~assets/fonts/FuturaPT-ExtraBold.woff") format("woff");
-}
-
-@font-face {
-  font-family: "FuturaMedium";
-  src: url("~assets/fonts/FuturaPT-Medium.woff") format("woff");
-}
-
-@font-face {
-  font-family: "FuturaRegular";
-  src: url("~assets/fonts/FuturaPT-Book.woff") format("woff");
-}
-
-@font-face {
-  font-family: "FuturaThin";
-  src: url("~assets/fonts/FuturaPT-Light.woff") format("woff");
-}
-
-.h1-heading {
-  text-transform: uppercase;
-  font-family: "FuturaBold";
-  font-size: 32px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-}
-
-.h2-heading {
-  text-transform: uppercase;
-  font-family: "FuturaRegular";
-  font-size: 20px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-}
-
-.h3-heading {
-  font-size: 20px;
-  font-family: "FuturaRegular";
-}
-
-.h5-heading {
-  text-transform: uppercase;
-  font-family: "FuturaMedium";
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 40px;
-}
-
-.regular-text {
-  font-family: "FuturaRegular";
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  margin: 0;
-}
-
-.color-gray {
-  color: #444444;
-}
-
-.color-white {
-  color: #fff;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.m0 {
-  margin: 0;
-}
-
-main {
-  position: relative;
-  overflow: hidden;
-}
-
 .yellow-fireworks-left {
   position: absolute;
   width: 652px;
@@ -486,6 +389,10 @@ main {
   flex-direction: column;
   flex-wrap: wrap;
   z-index: 10;
+}
+
+.mln-short {
+  display: none;
 }
 
 .logo-container {
@@ -550,11 +457,12 @@ main {
 }
 
 .vip-party img {
-  max-width: 90px;
-  height: 70px;
+  max-width: 78px !important;
+  height: 43px !important;
   position: absolute;
-  right: -20px;
-  top: -50px;
+  right: -6px;
+  top: -23px;
+  transform: rotateZ(35deg);
 }
 
 .for-kids img {
@@ -673,6 +581,27 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.ribbon-l {
+  position: absolute;
+  top: -31%;
+  left: -13%;
+  z-index: 1;
+}
+
+.ribbon-s {
+  position: absolute;
+
+  z-index: 2;
+  transform: rotatez(110deg);
+  right: -20%;
+  width: 400px;
+  bottom: 1%;
+  z-index: 1;
 }
 
 .events-header {
@@ -687,6 +616,7 @@ main {
   text-transform: uppercase;
   color: #444444;
   padding-bottom: 80px;
+  z-index: 10;
 }
 
 .events-header ul {
@@ -699,6 +629,7 @@ main {
 
 .events-header a {
   text-decoration: none;
+  z-index: 20;
 }
 
 .events-header li {
@@ -728,6 +659,7 @@ main {
   flex-direction: row;
   align-self: center;
   padding-bottom: 40px;
+  position: relative;
 }
 
 .graphics {
@@ -736,6 +668,7 @@ main {
   align-items: center;
   flex-direction: row;
   padding-right: 100px;
+  z-index: 20;
 }
 
 .graphics .photo {
@@ -743,7 +676,31 @@ main {
 }
 
 .graphics .icon {
-  padding-right: 20px;
+  position: absolute;
+  top: 0px;
+  width: 35px;
+  right: 32%;
+}
+
+.glasses {
+  top: -15px !important;
+}
+
+.flowers {
+  top: -10px !important;
+  right: 33.2% !important;
+}
+
+.crown {
+  top: 10px !important;
+  right: 33.2% !important;
+  transform: rotateZ(35deg);
+}
+
+.balloon {
+  top: -15px !important;
+  right: 34.5% !important;
+  width: 30px !important;
 }
 
 .event-text {
@@ -760,15 +717,21 @@ main {
 
 .events-gallery {
   background: #3a3a3a;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
+.gallery-heading {
+  padding-top: 60px;
+  padding-bottom: 10px;
+}
+
 .events-gallery img {
-  width: 70%;
+  width: 60%;
+  padding-bottom: 50px;
 }
 
 .gallery {
@@ -804,6 +767,7 @@ figure > img {
   flex-direction: row;
   padding: 50px 0;
   position: relative;
+  overflow: hidden;
 }
 
 .loft-heading {
@@ -853,8 +817,8 @@ figure > img {
 .loft-text {
   z-index: 20;
   position: absolute;
-  top: 15%;
-  right: 10%;
+  top: 22%;
+  right: 14%;
 }
 
 /*                                                     testimonials SECTION*/
@@ -931,59 +895,59 @@ figure > img {
 }
 
 /*                                                     request SECTION */
-.request {
-  background: white;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  flex-wrap: wrap;
-  flex-direction: column;
-  padding-top: 50px;
-}
-
-.request-header {
-  z-index: 10;
-  flex: 1 0 100%;
-  order: 0;
-}
-
-.request-left {
-  flex: 1;
-  order: 2;
-  padding: 20px 20px;
-  text-align: center;
-}
-
-.request-right {
-  flex: 1;
-  order: 3;
-  padding: 20px 20px;
-  text-align: center;
-}
-
-#myform {
-  font-family: "FuturaRegular";
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  text-align: left;
-  color: #444444;
-  z-index: 10;
-  padding-bottom: 20px;
-  width: 400px;
-}
-
-/*                                                     map SECTION */
-.map-frame {
-  z-index: 10;
-}
 
 /*                                                    768px MEDIA */
 
+@media (max-width: 1024px) {
+  .graphics .icon {
+    right: 23% !important;
+  }
+}
+
 @media (max-width: 768px) {
+  .ribbon-l {
+    display: none;
+  }
+
+  .ribbon-s {
+    display: none;
+  }
+
+  .glasses {
+    all: unset;
+  }
+
+  .flowers {
+    all: unset;
+  }
+
+  .crown {
+    all: unset;
+    transform: rotateZ(35deg);
+  }
+
+  .balloon {
+    width: 170px !important;
+  }
+
+  .graphics .icon {
+    all: unset;
+    padding-right: 20px;
+    width: 170px;
+    height: 170px;
+  }
+
+  .event-text {
+    width: 33%;
+  }
+
+  .arrow-down-team {
+    top: 48vh;
+  }
+
+  .company-logo {
+    height: 56vh;
+  }
   /*                                       LOGO*/
   .logo-container img {
     width: 400px;
@@ -995,7 +959,7 @@ figure > img {
 
   .vip-party img {
     right: -2px;
-    top: -45px;
+    top: -21px;
     width: 37px;
   }
 
@@ -1018,13 +982,13 @@ figure > img {
   }
 
   .event-grid > div > a > h5 {
-    height: 27px;
-    width: 105px;
+    height: 42px;
+    width: 135px;
   }
 
   .h5-heading {
-    font-size: 12px;
-    line-height: 29px;
+    font-size: 18px;
+    line-height: 42px;
   }
 
   /*                             VIDEO*/
@@ -1070,19 +1034,22 @@ figure > img {
     padding-bottom: unset;
   }
 
+  .loft {
+    height: 70vh;
+  }
   .circle {
     width: 50vh;
     height: 50vh;
     border-radius: 50%;
     position: absolute;
-    right: 122px;
+    right: 15px;
     top: 175px;
   }
 
   .loft-text {
     z-index: 20;
     position: absolute;
-    top: 30%;
+    top: 28%;
     right: 4%;
   }
 
@@ -1095,18 +1062,32 @@ figure > img {
   }
 
   .loft-glasses {
-    right: 18%;
+    right: 14%;
     top: 66%;
   }
 
   .loft-balloon {
     right: 23%;
-    top: 48%;
+    top: 53%;
   }
 
   .loft-flowers {
     right: 36%;
-    top: 61%;
+    top: 65%;
+  }
+
+  .events-header {
+    padding: 0;
+  }
+
+  .team {
+    height: unset;
+    position: relative;
+    padding: 100px 0;
+  }
+
+  .team-heading {
+    padding-top: unset;
   }
 
   /* TESTIMONIALS*/
@@ -1121,30 +1102,49 @@ figure > img {
   }
 
   /*REQUEST*/
-  .request {
-    flex-direction: column;
-  }
-
-  iframe {
-    height: 400px;
-    width: 600px;
-    padding: unset;
-  }
-
-  .request-right {
-    padding: unset;
-  }
 }
 
 @media (max-width: 425px) {
+  .mln-long {
+    display: none;
+  }
+
+  .logo-container {
+    width: unset;
+    padding-top: unset;
+  }
+
+  .company-logo {
+    height: 100vh;
+  }
+
+  .arrow-down-team {
+    top: 88vh;
+  }
+
+  .logo-container img {
+    max-width: unset;
+    width: unset;
+    width: 125px;
+  }
+
+  .mln-short {
+    display: unset;
+  }
+
   .event-grid {
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     width: 80%;
   }
 
   .event-grid > div {
     width: unset;
+  }
+
+  .event-grid > div > a > h5 {
+    height: 30px;
+    width: 148px;
   }
 
   .hr {
@@ -1200,9 +1200,17 @@ figure > img {
     display: none;
   }
 
+  .company-pitch {
+    width: 60.6%;
+  }
+  .team-content {
+    padding: 0 25px;
+  }
+
   .events-header ul {
     margin: 0;
     padding: 0;
+    z-index: 20;
   }
 
   .graphics {
@@ -1239,8 +1247,7 @@ figure > img {
   }
 
   .circle {
-    right: 16%;
-    top: 29%;
+    display: none;
   }
 
   .item-content {
@@ -1257,6 +1264,127 @@ figure > img {
   }
   iframe {
     width: 425px;
+  }
+
+  #myform {
+    width: 290px;
+  }
+
+  .graphics .icon {
+    height: 100px;
+  }
+
+  .crown {
+    transform: scale(0.5) !important;
+  }
+
+  .event-grid > div > a > h5 {
+    height: 27px;
+    width: 105px;
+  }
+
+  .h5-heading {
+    font-size: 12px;
+    line-height: 29px;
+  }
+
+  .team-heading {
+    padding: 0;
+  }
+
+  .arrow-down-video {
+    display: none;
+  }
+
+  .arrow-down-events {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .team-heading {
+    width: 300px;
+  }
+  .events-header li {
+    padding: 0 10px;
+  }
+  .graphics .icon {
+    padding-right: unset;
+  }
+
+  .events-gallery {
+    height: 77vh;
+  }
+
+  .circle {
+    right: 10%;
+    top: 29%;
+  }
+
+  .h3-heading {
+    font-size: 17px;
+  }
+
+  iframe {
+    width: 375px;
+  }
+}
+
+@media (max-width: 320px) {
+  .events-header {
+    padding-bottom: unset;
+  }
+
+  .graphics .icon {
+    display: none;
+  }
+
+  .event-text {
+    padding: 0 32px;
+  }
+
+  .event-text h2 {
+    text-align: center;
+  }
+
+  .event-text p {
+    text-align: justify;
+  }
+
+  .circle {
+    right: 2%;
+  }
+
+  .loft-heading {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .loft-heading p {
+    text-align: center;
+    padding: 0px 70px;
+  }
+
+  .h3-heading {
+    font-size: 14px;
+  }
+
+  .events-header ul {
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 65px;
+    align-self: center;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .events-header li {
+    padding: 5px 5px;
+  }
+
+  #myform {
+    width: 250px;
   }
 }
 
@@ -1318,67 +1446,6 @@ figure > img {
   }
   100% {
     opacity: 0;
-  }
-}
-
-@-moz-keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    -moz-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -moz-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-  60% {
-    -moz-transform: translateY(-5px);
-    transform: translateY(-5px);
-  }
-}
-@-webkit-keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-  60% {
-    -webkit-transform: translateY(-5px);
-    transform: translateY(-5px);
-  }
-}
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  40% {
-    -moz-transform: translateY(-10px);
-    -ms-transform: translateY(-10px);
-    -webkit-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-  60% {
-    -moz-transform: translateY(-5px);
-    -ms-transform: translateY(-5px);
-    -webkit-transform: translateY(-5px);
-    transform: translateY(-5px);
   }
 }
 </style>

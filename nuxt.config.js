@@ -67,7 +67,9 @@ export default {
    ** Global CSS
    */
   css: [
-    '~assets/styles/transition.css'
+    '~assets/styles/transition.css',
+    '~assets/styles/styles.css',
+    '~assets/styles/form.css'
   ],
 
   /*

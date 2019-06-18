@@ -1,0 +1,100 @@
+.request {
+  background: white;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-top: 50px;
+}
+
+.request-header {
+  z-index: 10;
+  flex: 1 0 100%;
+  order: 0;
+}
+
+.request-left {
+  flex: 1;
+  order: 2;
+  padding: 20px 20px;
+  text-align: center;
+}
+
+.request-right {
+  flex: 1;
+  order: 3;
+  padding: 20px 20px;
+  text-align: center;
+}
+
+#myform {
+  font-family: "FuturaRegular";
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  text-align: left;
+  color: #444444;
+  z-index: 10;
+  padding-bottom: 20px;
+  width: 400px;
+}
+
+/*                                                     map SECTION */
+.map-frame {
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .request {
+    flex-direction: column;
+  }
+
+  iframe {
+    height: 400px;
+    width: 600px;
+    padding: unset;
+  }
+
+  .request-right {
+    padding: unset;
+  }
+}
+
+@media (max-width: 425px) {
+  .request-left {
+    padding: 20px 0;
+  }
+
+  iframe {
+    width: 425px;
+  }
+
+  #myform {
+    width: 290px;
+  }
+}
+
+@media (max-width: 375px) {
+  iframe {
+    width: 375px;
+  }
+}
+
+@media (max-width: 320px) {
+  .request {
+    padding-top: 25px;
+  }
+
+  .request-header {
+    padding: 0px 10px;
+  }
+
+  iframe {
+
+    width: 325px !important;
+  }
+}

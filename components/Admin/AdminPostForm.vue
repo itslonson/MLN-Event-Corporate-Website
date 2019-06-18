@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent>
+  <form @submit.prevent id="#adminform">
     <!--- @submit.prevent="onSave" !-->
     <AppControlInput v-model="editedPost.author">Имя Автора</AppControlInput>
     <AppControlInput v-model="editedPost.title">Название</AppControlInput>
@@ -7,7 +7,7 @@
     <AppControlInput control-type="textarea" v-model="editedPost.previewText">Прьевью к посту</AppControlInput>
     <AppControlInput control-type="textarea" v-model="editedPost.content">Контент</AppControlInput>
     <AppButton type="submit" @click="onSave">Опубликовать</AppButton>
-    <AppButton type="button" style="margin-left: 10px" btn-style="cancel" @click="onCancel">Отменить</AppButton>
+    <AppButton type="button" btn-style="cancel" @click="onCancel">Отменить</AppButton>
   </form>
 </template>
 
@@ -56,3 +56,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+button {
+  margin-bottom: 15px;
+}
+</style>

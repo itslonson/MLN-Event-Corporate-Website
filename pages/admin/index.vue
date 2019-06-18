@@ -1,7 +1,11 @@
 <template>
   <div class="admin-page">
     <section class="existing-posts">
-      <h1>Опубликованные посты</h1>
+      <h1 v-if="loadedPosts.length" class="h1-heading color-gray text-center">Опубликованные посты</h1>
+      <h1
+        v-if="!loadedPosts.length"
+        class="h1-heading color-gray text-center"
+      >пока ничего не опубликовано</h1>
       <PostList isAdmin :posts="loadedPosts"/>
     </section>
   </div>
@@ -24,8 +28,10 @@ export default {
   padding: 20px;
 }
 
-.existing-posts h1 {
-  text-align: center;
+@media (max-width: 375) {
+  h1 {
+    font-size: 24px;
+  }
 }
 </style>
 

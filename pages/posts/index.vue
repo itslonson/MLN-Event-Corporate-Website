@@ -1,6 +1,5 @@
 <template>
   <div class="posts-page">
-    <section class="intro"></section>
     <PostList :posts="loadedPosts"/>
   </div>
 </template>
@@ -18,23 +17,18 @@ export default {
 
 <style scoped>
 .posts-page {
-  background: linear-gradient(
-      to right,
-      rgb(87, 193, 159) 0%,
-      rgb(132, 210, 242) 100%
-    )
-    no-repeat center center fixed;
-  height: 100vh;
+  background: white;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
 }
 
-.intro {
-  height: 300px;
-  position: relative;
-  padding: 30px;
-  box-sizing: border-box;
-  background-position: center;
-  background-size: cover;
-  background: url("https://cdn2.wpbeginner.com/wp-content/uploads/2019/01/choosethebestbloggingplatform.png");
+@media (max-width: 950px) {
+  .posts-page {
+    padding-top: 10%;
+  }
 }
 
 @media (min-width: 768px) {

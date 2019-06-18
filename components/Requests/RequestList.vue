@@ -1,45 +1,44 @@
 <template>
-  <section class="request-list">
-    <div class="request-content">
-      <table class="request-table">
-        <thead>
-          <tr>
-            <th>ФИО</th>
-            <th>Формат</th>
-            <th>Гости</th>
-            <th>Бюджет</th>
-            <th>Почта</th>
-            <th>Телефон</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr
-            v-for="request in requests"
-            :key="request.id"
-            :id="request.id"
-            :is-admin="isAdmin"
-            :fullName="request.fullName"
-            :eventType="request.eventType"
-            :guestCount="request.guestCount"
-            :eventBudget="request.eventBudget"
-            :emailAddress="request.emailAddress"
-            :phoneNumber="request.phoneNumber"
-          >
-            <td>{{request.fullName}}</td>
-            <td>{{request.eventType}}</td>
-            <td>{{request.guestCount}}</td>
-            <td>{{request.eventBudget}}</td>
-            <td>
-              <a target="_blank" :href="'mailto:' + request.emailAddress">{{request.emailAddress}}</a>
-            </td>
-            <td>
-              <a :href="'tel:' + request.emailAddress">{{request.phoneNumber}}</a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+  <main>
+    <table role="table">
+      <thead role="rowgroup">
+        <tr role="row">
+          <th role="columnheader">ФИО</th>
+          <th role="columnheader">Формат</th>
+          <th role="columnheader">Гости</th>
+          <th role="columnheader">Бюджет</th>
+          <th role="columnheader">Почта</th>
+          <th role="columnheader">Телефон</th>
+        </tr>
+      </thead>
+      <tbody role="rowgroup">
+        <tr
+          role="row"
+          v-for="request in requests"
+          :key="request.id"
+          :id="request.id"
+          :is-admin="isAdmin"
+          :fullName="request.fullName"
+          :eventType="request.eventType"
+          :guestCount="request.guestCount"
+          :eventBudget="request.eventBudget"
+          :emailAddress="request.emailAddress"
+          :phoneNumber="request.phoneNumber"
+        >
+          <td style="text-align: left;">{{request.fullName}}</td>
+          <td>{{request.eventType}}</td>
+          <td>{{request.guestCount}}</td>
+          <td>{{request.eventBudget}}</td>
+          <td>
+            <a target="_blank" :href="'mailto:' + request.emailAddress">{{request.emailAddress}}</a>
+          </td>
+          <td>
+            <a :href="'tel:' + request.emailAddress">{{request.phoneNumber}}</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
 </template>
 
 <script>
@@ -58,82 +57,92 @@ export default {
 </script>
 
 <style scoped>
-.request-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+table {
+  width: 100%;
+
+  margin-top: 20px;
+}
+
+th,
+td {
+  text-align: center;
+}
+
+td {
+  font-family: "FuturaRegular";
+}
+thead tr {
+  background: #dedede;
+  height: 40px;
+  font-family: "FuturaMedium";
 }
 
 a {
   color: blue;
 }
 
-table.request-table {
-  border: 1px solid #c9c9c9;
-  background-color: #eeeeee;
-  width: 100%;
-  text-align: left;
-}
-table.request-table td,
-table.request-table th {
-  border: 1px solid #aaaaaa;
-  padding: 5px 5px;
-}
-table.request-table tbody td {
-  font-size: 12px;
-}
-table.request-table thead {
-  background: #6b6565;
-  background: -moz-linear-gradient(top, #908b8b 0%, #797474 66%, #6b6565 100%);
-  background: -webkit-linear-gradient(
-    top,
-    #908b8b 0%,
-    #797474 66%,
-    #6b6565 100%
-  );
-  background: linear-gradient(to bottom, #908b8b 0%, #797474 66%, #6b6565 100%);
-}
-table.request-table thead th {
-  font-size: 15px;
-  font-weight: bold;
-  color: #ffffff;
-  text-align: center;
-  border-left: 2px solid #aaaaaa;
-}
-table.request-table thead th:first-child {
-  border-left: none;
+tr:nth-child(even) {
+  background: #ededed;
 }
 
-table.request-table tfoot td {
-  font-size: 14px;
-}
-table.request-table tfoot .links {
-  text-align: right;
-}
-table.request-table tfoot .links a {
-  display: inline-block;
-  background: #1c6ea4;
-  color: #ffffff;
-  padding: 2px 8px;
-  border-radius: 5px;
-}
+@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    text-align: left;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
 
-@media (min-width: 850px) {
-  .request-preview {
-    width: 400px;
-    margin: 10px;
+  tr {
+    margin: 0 0 1rem 0;
+  }
+
+  tr:nth-child(odd) {
+    background: #ccc;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  td:nth-of-type(1):before {
+    content: "ФИО";
+  }
+  td:nth-of-type(2):before {
+    content: "Формат";
+  }
+  td:nth-of-type(3):before {
+    content: "Гости";
+  }
+  td:nth-of-type(4):before {
+    content: "Бюджет";
+  }
+  td:nth-of-type(5):before {
+    content: "Почта";
+  }
+  td:nth-of-type(6):before {
+    content: "Телефон";
   }
 }
-
-.post-request-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-request-content,
-a:active .post-request-content {
-  background-color: #ccc;
-}
 </style>
-

@@ -49,6 +49,7 @@ export default {
   width: 90%;
   margin: 20px auto;
 }
+
 @media (min-width: 800px) {
   .update-form {
     width: 500px;

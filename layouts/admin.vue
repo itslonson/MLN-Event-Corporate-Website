@@ -1,26 +1,39 @@
 <template>
   <div>
-    <AdminNavigation style="margin-top:10px"/>
+    <NavAlt/>
+    <AdminNavigation/>
     <nuxt/>
   </div>
 </template>
 
 <script>
+import NavAlt from "@/components/Navigation/NavAlt";
 import AdminNavigation from "@/components/Admin/AdminNavigation";
 export default {
   components: {
-    AdminNavigation
+    AdminNavigation,
+    NavAlt
   }
 };
 </script>
 
 
 <style >
-html {
-  font-family: "Roboto", sans-serif;
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth !important;
 }
 
-body {
-  margin: 0;
+* {
+  scroll-behavior: smooth !important;
+}
+html::-webkit-scrollbar {
+  width: 0 !important;
+  scroll-behavior: smooth !important;
 }
 </style>

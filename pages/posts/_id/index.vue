@@ -1,20 +1,33 @@
 <template>
-  <div class="single-post-page">
+  <main>
     <section class="post">
-      <h1 class="post-title">{{loadedPost.title}}</h1>
-      <div class="post-details">
-        <div class="post-detail">Опубликовано {{loadedPost.updatedDate | date}}</div>
-        <div class="post-detail">Автор {{loadedPost.author}}</div>
+      <h1 class="h1-heading color-gray text-center">{{loadedPost.title}}</h1>
+      <div class="info">
+        <div class="details">
+          <div class="author">
+            <i class="fas fa-user-circle color-gray"></i>
+            <p class="regular-text">{{loadedPost.author}}</p>
+          </div>
+
+          <div class="date">
+            <i class="far fa-calendar-alt color-gray"></i>
+            <p class="regular-text">{{loadedPost.updatedDate | date}}</p>
+          </div>
+        </div>
+        <div class="image">
+          <img :src="loadedPost.thumbnail" alt="Фото">
+        </div>
       </div>
-      <p class="post-content">{{loadedPost.content}}</p>
+
+      <div class="content">
+        <p
+          v-for="item in loadedPost.content.split('\n\n')"
+          :key="item.i"
+          class="h3-heading color-gray"
+        >{{item}}</p>
+      </div>
     </section>
-    <section class="post-feedback">
-      <p>
-        Оставьте пожелания и вопросы по этому
-        <a href="mailto:omnixejiharu@gmail.com">адресу</a>
-      </p>
-    </section>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -29,63 +42,98 @@ export default {
         return {
           loadedPost: res.data
         };
-      })
-      .catch(e => context.error(e));
+      });
+  },
+  data() {
+    return {
+      Mycontent: ["{{loadedPost.content}}"]
+    };
   }
 };
 </script>
 
 
 <style scoped>
-.single-post-page {
-  padding: 30px;
-  text-align: center;
-  box-sizing: border-box;
-}
-
 .post {
-  width: 100%;
-}
-
-@media (min-width: 768px) {
-  .post {
-    width: 600px;
-    margin: auto;
-  }
-}
-
-.post-title {
-  margin: 0;
-}
-
-.post-details {
-  padding: 10px;
-  box-sizing: border-box;
-  border-bottom: 3px solid #ccc;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 10% 10%;
 }
 
-@media (min-width: 768px) {
-  .post-details {
+.info {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  padding-top: 5%;
+  padding-bottom: 20px;
+}
+
+.image {
+  flex: 1;
+  order: 0;
+}
+
+.details {
+  flex: 1;
+  order: 1;
+  text-align: right;
+}
+
+.author,
+.date {
+  padding: 10px 0;
+}
+
+.content {
+  flex: 1;
+  order: 2;
+  text-align: justify;
+}
+
+.image img {
+  max-width: 700px;
+}
+
+@media (max-width: 768px) {
+  .info {
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    padding-bottom: unset;
+  }
+
+  .author,
+  .date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: row;
+    padding: 10px 20px;
+  }
+
+  .details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  .content {
+    padding: 0 34px;
   }
 }
 
-.post-detail {
-  color: rgb(88, 88, 88);
-  margin: 0 10px;
-}
+@media (max-width: 425px) {
+  .post h1 {
+    font-size: 19px;
+  }
+  .content {
+    padding: 0;
+  }
 
-.post-feedback a {
-  color: red;
-  text-decoration: none;
-}
-
-.post-feedback a:hover,
-.post-feedback a:active {
-  color: salmon;
+  .post {
+    padding: 10% 5%;
+  }
 }
 </style>

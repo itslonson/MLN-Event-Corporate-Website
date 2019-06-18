@@ -1,34 +1,43 @@
 <template>
- <div>
-    <TheHeader @sidenavToggle="displaySidenav =! displaySidenav"/>
-    <TheSidenav :show="displaySidenav" @close="displaySidenav = false"/> 
-    <nuxt />
-</div>
+  <div>
+    <Nav/>
+    <nuxt/>
+  </div>
 </template>
 
 <script>
-import TheHeader from '@/components/Navigation/Other/TheHeader'
-import TheSidenav from '@/components/Navigation/Other/TheSidenav'
+import Nav from "@/components/Navigation/Nav";
 
 export default {
-    components:{
-        TheHeader,
-        TheSidenav
-    },
-    data() {
-        return{
-            displaySidenav: false
-        }
-    }
-}
+  components: {
+    Nav
+  }
+};
 </script>
 
 <style >
-html {
-  font-family: 'Roboto', sans-serif;
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth !important;
 }
 
-body{
-  margin: 0;
+* {
+  scroll-behavior: smooth !important;
+}
+html::-webkit-scrollbar {
+  width: 0 !important;
+  scroll-behavior: smooth !important;
 }
 </style>
+
+
+
+
+
+
+

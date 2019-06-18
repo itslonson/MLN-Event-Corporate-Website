@@ -1,27 +1,16 @@
 <template>
   <div>
-    <!-- <TheHeader @sidenavToggle="displaySidenav =! displaySidenav"/>
-    <TheSidenav :show="displaySidenav" @close="displaySidenav = false"/>-->
     <Nav/>
     <nuxt/>
   </div>
 </template>
 
 <script>
-import TheHeader from "@/components/Navigation/Landing/TheLandingHeader";
-import TheSidenav from "@/components/Navigation/Landing/TheLandingSidenav";
 import Nav from "@/components/Navigation/Nav";
 
 export default {
   components: {
-    TheHeader,
-    TheSidenav,
     Nav
-  },
-  data() {
-    return {
-      displaySidenav: false
-    };
   }
 };
 </script>

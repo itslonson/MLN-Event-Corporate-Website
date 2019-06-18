@@ -1,35 +1,36 @@
 <template>
-<section class="post-list">
+  <section class="post-list">
     <PostPreview
-    v-for="post in posts" :key="post.id"
-    :id="post.id"
-    :is-admin="isAdmin"
-    :thumbnail="post.thumbnail"
-    :title="post.title"
-    :previewText="post.previewText"
+      v-for="post in posts"
+      :key="post.id"
+      :id="post.id"
+      :is-admin="isAdmin"
+      :thumbnail="post.thumbnail"
+      :title="post.title"
+      :previewText="post.previewText"
     />
-</section>
+  </section>
 </template>
 
 <script>
-import PostPreview from '@/components/Posts/PostPreview'
+import PostPreview from "@/components/Posts/PostPreview";
 
 export default {
-  layout: 'blog',
-  components:{
+  layout: "blog",
+  components: {
     PostPreview
   },
-  props:{
-    isAdmin:{
+  props: {
+    isAdmin: {
       type: Boolean,
       default: false
     },
-    posts:{
+    posts: {
       type: Array,
       required: true
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -40,5 +41,6 @@ export default {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
 }
 </style>

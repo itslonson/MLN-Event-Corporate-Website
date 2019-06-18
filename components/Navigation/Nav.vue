@@ -6,9 +6,6 @@
           <li>
             <nuxt-link to="/" class="link">Главная</nuxt-link>
           </li>
-          <li>
-            <nuxt-link to="/services" class="link">услуги</nuxt-link>
-          </li>
 
           <li>
             <nuxt-link to="/loft" class="link">loft</nuxt-link>

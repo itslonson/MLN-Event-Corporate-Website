@@ -1,0 +1,175 @@
+* {
+  scroll-behavior: smooth;
+}
+
+/*FONTS*/
+@font-face {
+  font-family: "FuturaBold";
+  src: url("~assets/fonts/FuturaPT-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FuturaExtraBold";
+  src: url("~assets/fonts/FuturaPT-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FuturaMedium";
+  src: url("~assets/fonts/FuturaPT-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FuturaRegular";
+  src: url("~assets/fonts/FuturaPT-Book.woff") format("woff");
+}
+
+@font-face {
+  font-family: "FuturaThin";
+  src: url("~assets/fonts/FuturaPT-Light.woff") format("woff");
+}
+
+.h1-heading {
+  text-transform: uppercase;
+  font-family: "FuturaBold";
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+.h2-heading {
+  text-transform: uppercase;
+  font-family: "FuturaRegular";
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+.h3-heading {
+  font-size: 20px;
+  font-family: "FuturaRegular";
+}
+
+.h5-heading {
+  text-transform: uppercase;
+  font-family: "FuturaMedium";
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 40px;
+}
+
+.regular-text {
+  font-family: "FuturaRegular";
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  margin: 0;
+}
+
+.color-gray {
+  color: #444444;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.m0 {
+  margin: 0;
+}
+
+main {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.bounce {
+  -moz-animation: bounce 3s infinite;
+  -webkit-animation: bounce 3s infinite;
+  animation: bounce 3s infinite;
+}
+
+@-moz-keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  60% {
+    -moz-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+@-webkit-keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  60% {
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}

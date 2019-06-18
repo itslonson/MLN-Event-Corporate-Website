@@ -1,29 +1,27 @@
 <template>
   <nav class="nav">
     <div class="container">
-      <div class="logo">
-        <nuxt-link to="/" class="long">Millennium Event</nuxt-link>
-        <nuxt-link to="/" class="short">ME</nuxt-link>
-      </div>
       <div id="menu-id" class="menu">
         <ul class="nav-links">
           <li>
-            <nuxt-link to="/about">о нас</nuxt-link>
+            <nuxt-link to="/" class="link">Главная</nuxt-link>
+          </li>
+
+          <li>
+            <nuxt-link to="/loft" class="link">loft</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/services">услуги</nuxt-link>
+            <nuxt-link to="/portfolio" class="link">портфолио</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/portfolio">портфолио</nuxt-link>
+            <nuxt-link to="/posts" class="link">блог</nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/loft">loft</nuxt-link>
-          </li>
-          <li>
-            <nuxt-link to="/posts">блог</nuxt-link>
+            <nuxt-link to="/admin" class="link">админ-панель</nuxt-link>
           </li>
         </ul>
       </div>
+
       <span class="nav-trigger">
         <i></i>
         <i></i>
@@ -36,11 +34,45 @@
 <script>
 export default {
   mounted() {
-    $(window).scroll(function() {
-      if ($(document).scrollTop() > $(".nav-overlay").height()) {
-        $(".nav").addClass("nav-min");
-      } else {
-        $(".nav").removeClass("nav-min");
+    $(window).on("scroll", function() {
+      // if ($(window).scrollTop() > $(".team").height() * 1.9) {
+      //   $(".link").addClass("change-color");
+      // } else {
+      //   $(".link").removeClass("change-color");
+      // }
+
+      // if ($(window).scrollTop() > $(".video").height() * 2.8) {
+      //   $(".link").removeClass("change-color");
+      // }
+      // if (
+      //   $(window).scrollTop() >
+      //   $(".video").height() * 2.8 + $(".events").height()
+      // ) {
+      //   $(".link").addClass("change-color");
+      // }
+      // if (
+      //   $(window).scrollTop() >
+      //   $(".video").height() * 2.8 + $(".events").height() * 1.5
+      // ) {
+      //   $(".link").removeClass("change-color");
+      // }
+
+      if (
+        $(window).scrollTop() >
+        $(".video").height() * 2.8 +
+          $(".events").height() * 1.5 +
+          $(".loft").height() * 1.2
+      ) {
+        $(".link").addClass("change-color");
+      }
+
+      if (
+        $(window).scrollTop() >
+        $(".video").height() * 2.8 +
+          $(".events").height() * 1.5 +
+          $(".loft").height() * 2.2
+      ) {
+        $(".link").removeClass("change-color");
       }
     });
 
@@ -53,46 +85,43 @@ export default {
 };
 </script>
 
-
 <style scoped>
+@font-face {
+  font-family: "FuturaBold";
+  src: url("~assets/fonts/FuturaPT-Bold.woff") format("woff");
+}
+* {
+  font-family: "FuturaBold";
+}
 /* Navbar section */
 
 .nav {
   width: 100%;
-  height: 65px;
+  height: 40px;
   position: fixed;
   line-height: 65px;
   text-align: center;
   z-index: 100;
-}
-
-.nav .logo {
-  float: left;
-  width: auto;
-  height: auto;
-  padding-left: 3rem;
+  background: white;
+  padding: 0;
 }
 
 .nav .logo .short {
   display: none;
-  font-size: 2em;
+  font-size: 13px;
   padding-left: 0.5em;
 }
 
 .nav .logo a {
   text-decoration: none;
-  color: black;
-  font-size: 1.75em;
+  color: #282828;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .nav .logo a:hover {
-  color: #ff03fc;
-}
-
-.nav-min {
-  padding: 0;
-  background: transparent;
+  color: #940283;
+  transition: all 0.2s ease-in-out;
 }
 
 .nav .menu {
@@ -119,15 +148,16 @@ export default {
 .nav .menu ul li a,
 .tel {
   text-decoration: none;
-  color: black;
-  font-size: 1.25rem;
+  color: #282828;
+  font-size: 13px;
   text-transform: uppercase;
   font-weight: 600;
 }
 
 .nav .menu ul li a:hover,
 .tel:hover {
-  color: #e9c000;
+  color: #940283;
+  transition: all 0.2s ease-in-out;
 }
 
 .nav-trigger {
@@ -135,29 +165,34 @@ export default {
 }
 
 .nav {
-  padding-top: 20px;
   padding-bottom: 20px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  display: flex;
+  justify-content: center;
+  order: 0;
 }
 
 /* Media qurey section */
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .nav {
+    padding-top: 0px;
+    padding-bottom: 20px;
+  }
   .container {
     margin: 0;
   }
 
   .tel {
     float: right;
-    padding: 0px 48px 0px 0px;
   }
 }
 
 @media screen and (min-width: 426px) and (max-width: 768px) {
-  .tel {
-    position: absolute;
-    right: 15%;
+  .nav {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .nav-trigger {
@@ -168,34 +203,36 @@ export default {
     width: 100%;
     height: 0;
     overflow: hidden;
+    text-align: center;
   }
 
   .nav .show-list {
     height: auto;
+    width: 100vw;
     display: none;
-    transition: all 0.4s ease-in-out;
   }
 
   .nav .menu ul {
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100vh;
     right: 0;
     left: 0;
     bottom: 0;
-    background: transparent;
+    background: white !important;
     background-position: center top;
   }
 
   .nav .menu ul li {
     width: 100%;
-    text-align: right;
+    text-align: center;
   }
 
   .nav .menu ul li a {
     text-align: center;
     width: 100%;
-    font-size: 1em;
+    font-size: 13px;
     padding: 20px;
   }
 
@@ -205,10 +242,9 @@ export default {
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
-  .tel {
-    position: absolute;
-    font-size: 1em;
-    right: 24%;
+  .nav {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
 
   .nav .logo .short {
@@ -231,7 +267,7 @@ export default {
   }
 
   .nav .logo a {
-    font-size: 1.25em;
+    font-size: 13px;
   }
 
   .nav .menu {
@@ -242,19 +278,19 @@ export default {
 
   .nav .show-list {
     height: auto;
-    display: none;
-    transition: all 0.4s ease-in-out;
+    width: 100vw;
   }
 
   .nav .menu ul {
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 100vh;
     right: 0;
     left: 0;
     bottom: 0;
-    background: #7200e1;
-    opacity: 0.9;
+    background: white !important;
+    opacity: 1;
     background-position: center top;
   }
 
@@ -266,8 +302,10 @@ export default {
   .nav .menu ul li a {
     text-align: center;
     width: 100%;
-    font-size: 1em;
+    font-size: 13px;
     padding: 20px;
+    color: #444444;
+    opacity: 1;
   }
 
   .nav .media_button {
@@ -287,7 +325,7 @@ export default {
 }
 
 .nav-trigger i {
-  background-color: black;
+  background-color: #282828;
   border-radius: 2px;
   content: "";
   display: block;
