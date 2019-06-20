@@ -20,7 +20,7 @@
     <AppControlInput
       v-model="requestedPost.phoneNumber"
       type="tel"
-      pattern="^(8|\+7)[\d\- ]{10}$"
+      pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
       required
     >Телефонный Номер</AppControlInput>
     <AppButton type="submit">Отправить</AppButton>
