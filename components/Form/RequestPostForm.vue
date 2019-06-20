@@ -20,7 +20,7 @@
     <AppControlInput
       v-model="requestedPost.phoneNumber"
       type="tel"
-      pattern="^[+7\[0-9]{12}"
+      pattern="^(8|\+7)[\d\- ]{10}$"
       required
     >Телефонный Номер</AppControlInput>
     <AppButton type="submit">Отправить</AppButton>
@@ -30,6 +30,7 @@
 <script>
 import AppControlInput from "@/components/UI/AppControlInput";
 import AppButton from "@/components/UI/AppButton";
+import { parsePhoneNumberFromString } from "libphonenumber-js";
 
 export default {
   components: {
@@ -59,6 +60,13 @@ export default {
   methods: {
     onSave() {
       //сохранить
+      const phone = parsePhoneNumberFromString(
+        this.requestedPost.phoneNumber,
+        "RU"
+      );
+      this.requestedPost.phoneNumber = phone.number;
+
+      console.log(this.requestedPost.phoneNumber);
       this.$emit("submit", this.requestedPost);
     }
   }

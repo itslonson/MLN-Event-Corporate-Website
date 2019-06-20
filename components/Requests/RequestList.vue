@@ -28,12 +28,12 @@
           <td style="text-align: left;">{{request.fullName}}</td>
           <td>{{request.eventType}}</td>
           <td>{{request.guestCount}}</td>
-          <td>{{request.eventBudget}}</td>
+          <td>{{Number(request.eventBudget).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}}</td>
           <td>
             <a target="_blank" :href="'mailto:' + request.emailAddress">{{request.emailAddress}}</a>
           </td>
           <td>
-            <a :href="'tel:' + request.emailAddress">{{request.phoneNumber}}</a>
+            <a :href="'tel:' + request.phoneNumber">{{request.phoneNumber}}</a>
           </td>
         </tr>
       </tbody>
@@ -66,6 +66,7 @@ table {
 th,
 td {
   text-align: center;
+  padding: 0 10px;
 }
 
 td {

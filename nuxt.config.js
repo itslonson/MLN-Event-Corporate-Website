@@ -7,7 +7,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: 'MLN-event | event-агентство',
+    title: 'MLN-event | event-агентство организации праздников | Москва',
     meta: [{
         charset: 'utf-8'
       },
@@ -18,7 +18,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: pkg.description
+        content: 'MLN-event - лучшее, что могло случиться с миром ивента! Корпоративы, свадьбы, взрослые и детские мероприятия и праздники в Москве'
       }
     ],
     link: [{
@@ -28,25 +28,15 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css'
-      },
-      {
-        rel: 'stylesheet',
         href: 'https://use.fontawesome.com/releases/v5.8.2/css/all.css'
-      },
-      {
-        rel: 'stylesheet',
-        href: '/nav.css'
       }
     ],
+
     script: [{
         src: "https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js",
         type: "text/javascript"
       },
-      {
-        src: "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js",
-        type: "text/javascript"
-      },
+
       {
         src: "https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js",
         type: "text/javascript"

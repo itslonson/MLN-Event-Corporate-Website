@@ -5,7 +5,7 @@
       <div class="info">
         <div class="details">
           <div class="author">
-            <i class="fas fa-user-circle color-gray"></i>
+            <i class="fas fa-user-circle"></i>
             <p class="regular-text">{{loadedPost.author}}</p>
           </div>
 

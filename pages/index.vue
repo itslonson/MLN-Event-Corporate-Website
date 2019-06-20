@@ -68,7 +68,6 @@
         src="~assets/videos/landing-video.mp4"
         muted
         loop
-        
         autoplay
       ></video>
     </section>
@@ -333,53 +332,7 @@ export default {
 
 
 <style scoped>
-.yellow-fireworks-left {
-  position: absolute;
-  width: 652px;
-  height: 651px;
-  top: 350px;
-  -webkit-animation: scale-up-left 5s cubic-bezier(1, 0, 0, 1) both;
-  animation: scale-up-left 5s cubic-bezier(1, 0, 0, 1) both;
-  animation-delay: 2s;
-}
-
-.yellow-fireworks-right {
-  position: absolute;
-  width: 652px;
-  height: 651px;
-  top: 350px;
-  right: 0;
-  -webkit-animation: scale-up-right 5s cubic-bezier(1, 0, 0, 1) both;
-  animation: scale-up-right 5s cubic-bezier(1, 0, 0, 1) both;
-  animation-delay: 2s;
-}
-
-.white-fireworks-event {
-  position: absolute;
-  width: 997px;
-  height: 875px;
-  top: 1374px;
-  left: 469px;
-  animation-name: spin;
-  animation-duration: 250s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-.white-fireworks-request {
-  position: absolute;
-  width: 997px;
-  height: 875px;
-  top: 3600px;
-  left: -300px;
-  animation-name: spin;
-  animation-duration: 250s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
 /*                                                company-logo SECTION  */
-
 .company-logo {
   background: #ededed;
   height: 100vh;
@@ -444,6 +397,11 @@ export default {
   height: 40px;
   width: 180px;
   margin: 0px 20px;
+}
+
+.event-grid > div > a > h5:hover {
+  color: #940283;
+  transition: all 0.2s ease-in-out;
 }
 
 .event-grid > div > a {

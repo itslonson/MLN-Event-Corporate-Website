@@ -84,7 +84,7 @@
         </ul>
       </div>
       <img src="~assets/images/events/event-img.png" alt="event images">
-      <a class="button regular-text color-gray text-center" href>посмотреть галлерею</a>
+ 
       <a href="#request-anchor" class="arrow-down-loft4">
         <i
           class="fas fa-angle-down bounce"

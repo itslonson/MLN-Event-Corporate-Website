@@ -93,8 +93,12 @@
     padding: 0px 10px;
   }
 
+  .request-header h1 {
+    font-size: 24px;
+  }
+
   iframe {
 
-    width: 325px !important;
+    width: 320px !important;
   }
 }
