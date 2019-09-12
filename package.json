@@ -13,23 +13,23 @@
     "test": "jest"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.19",
-    "@fortawesome/vue-fontawesome": "^0.1.6",
-    "@nuxtjs/axios": "^5.3.6",
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/vue-fontawesome": "^0.1.7",
+    "@nuxtjs/axios": "^5.6.0",
     "@nuxtjs/pwa": "^2.6.0",
-    "cross-env": "^5.2.0",
-    "js-cookie": "^2.2.0",
-    "libphonenumber-js": "^1.7.19",
-    "nuxt": "^2.4.0",
+    "cross-env": "^5.2.1",
+    "js-cookie": "^2.2.1",
+    "libphonenumber-js": "^1.7.24",
+    "nuxt": "^2.9.2",
     "nuxt-fontawesome": "^0.4.0",
     "simplelightbox": "^1.17.2"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^24.1.0",
-    "jest": "^24.1.0",
-    "nodemon": "^1.18.9",
-    "vue-jest": "^3.0.3"
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.2",
+    "vue-jest": "^3.0.5"
   }
 }
