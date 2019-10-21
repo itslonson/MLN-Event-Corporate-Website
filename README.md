@@ -1,14 +1,11 @@
-# mln-event
-
-> millenium event web-site
+Project Deployed on the 29th of August, 2019
+Live Link: https://mln-event.herokuapp.com
 
 ## Build Setup
-
-``` bash
 # install dependencies
 $ npm install
 
-# serve with hot reload at localhost:30git commit -m "first commit"00
+# serve with hot reload at localhost
 $ npm run dev
 
 # build for production and launch server
@@ -17,6 +14,3 @@ $ npm start
 
 # generate static project
 $ npm run generate
-```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
