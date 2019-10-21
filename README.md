@@ -1,4 +1,4 @@
-Project Deployed on the 29th of August, 2019
+Project Deployed on the 29th of August, 2019<br/>
 Live Link: https://mln-event.herokuapp.com
 
 ## Build Setup
